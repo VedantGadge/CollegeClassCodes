@@ -1,0 +1,30 @@
+class Exp7_b
+{
+int a,b;
+Exp7_b(int x,int y)
+{
+a=x;
+b=y;
+}
+Exp7_b(int x)
+{
+a=x;
+}
+int Area_S()
+{
+return a*a;
+}
+int Area_R()
+{
+return a*b;
+}
+public static void main(String args[])
+{
+int area;
+Exp7_b square = new Exp7_b(5);
+area = square.Area_S();
+Exp7_b rectangle = new Exp7_b(5,10);
+area = rectangle.Area_S();
+}
+}
+
