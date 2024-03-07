@@ -1,0 +1,19 @@
+class Vehicle
+{
+Vehicle()
+{
+System.out.println("Vehicle is created.");
+}
+}
+class Bike extends Vehicle
+{
+Bike()
+{
+super();
+System.out.println("Bike is created.");
+}
+public static void main(String Args[])
+{
+
+}
+}
