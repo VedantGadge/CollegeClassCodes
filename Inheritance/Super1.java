@@ -9,7 +9,7 @@ class Super1 extends Vehicle
     void display()
     {
         System.out.println(speed);
-        System.out.println(super.speed);
+        System.out.println(super.speed); //super keyword is used to access the variables and methods of the parent class
     }
     public static void main(String[] args) 
     {
