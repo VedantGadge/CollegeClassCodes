@@ -1,7 +1,10 @@
 => Abstract functions/methods are those methods which we just declare but don't wrote its implementation.
+
 => Abstract classes are classes which contain the abstract methods, are intended for the purpose of being used by a child class.If we dont implement the abstract methods 
    in the child class then it gives us an error.
+
 => Abstract classes can have normal methods,but need atleast one abstract method.While abstract method can be written only inside an abstract class.
+
 => Syntax:
     abstract class <class_name>
     {

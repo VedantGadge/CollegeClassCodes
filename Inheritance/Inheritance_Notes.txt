@@ -6,5 +6,5 @@
 => Method overloading is when methods with same naame having diff paramters,no of parametrs or order different WITHIN THE SAME CLASS.
    But Method overriding is when methods having same name and exactly same attributes, WITHIN DIFFERENT CLASSES.
 
-=>By default, when a
+=>By default, when a class doesn't extend any class, it extends the inbuilt 'Objects' class, which enables us to create multiple objects of that class(polymorphism).
 
