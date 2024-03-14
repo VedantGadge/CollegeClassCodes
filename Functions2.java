@@ -17,7 +17,7 @@ Scanner sc = new Scanner(System.in);
 System.out.println("Enter the integer and its power: ");
 a=sc.nextInt();
 n=sc.nextInt();
-ans = calculatePower;
+ans = calculatePower(a,n);
 System.out.println("The result is: "+ans);
 }
 }
