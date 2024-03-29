@@ -13,7 +13,7 @@ this.r=r;
 }
 public float calcArea()
 {
-float area_circle=(22/7)*r*r;
+float area_circle=3.142f*r*r;
 return area_circle;
 }
 }
@@ -28,7 +28,7 @@ this.h=h;
 }
 public float calcArea()
 {
-float area_tri=2*b*h;
+float area_tri=0.5f*b*h;
 return area_tri;
 }
 }
