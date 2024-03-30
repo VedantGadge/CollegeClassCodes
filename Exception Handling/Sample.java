@@ -20,3 +20,4 @@ System.out.println(y);
 }
 
 //By using try catch n all we dont solve the exception or anything we just handle it.
+//try throws the exception in form of an object, that's y we have an object as an argument in catch

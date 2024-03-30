@@ -1,0 +1,23 @@
+class Nested_Try
+{
+public static void main(String args[])
+{
+int a[] = new int[5];
+try
+{
+try
+{
+int a[1] = 5/0;
+int a[6] = 10;
+}
+catch(ArithmeticException e)
+{
+System.out.println("Dividing by 0!");
+}
+}
+catch(ArrayIndexOutOfBounds)
+{
+System.out.println("Array index out of bounds !");
+}
+}
+}
