@@ -28,12 +28,12 @@ class ValidateMarks extends TestThrow
         float m = sc.nextFloat();
         try
         {
-            TestThrow.MarksCheck(m);
+            MarksCheck(m);
             System.out.println("Your inputted marks "+m+" are within valid range.");
         }
-        catch(MarksOutOfBoundsException e)
+        catch(Exception e)
         {
-            System.out.println("Error message "+e);
+            System.out.println("Error message: "+e);
         }
     }
 }
