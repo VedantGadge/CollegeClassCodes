@@ -14,7 +14,7 @@ public void run()
 {
 for(int j=5;j>=0;j--)
 {
-System.out.print("\n"+‍j);
+System.out.print("\n"+j);
 }
 }
 }
