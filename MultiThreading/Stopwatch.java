@@ -2,64 +2,97 @@ import java.util.*;
 
 class printStopWatch extends Thread
     {
-        static int k=0;
-        public void print()
+        volatile static int k=0;
+        int hr=0,min=0,sec=0,centis=0;
+        public void run()
         {
             while(k!=1)
             {
-                    int hr=0,min=0,sec=0;
-                    for(sec=1;sec>=0;sec++)
+                centis++;
+                System.out.print("\r"+hr+"\t:\t"+min+"\t:\t"+sec+"\t:\t"+centis);
+                        
+                try
                     {
-                        System.out.println(hr+"\t:\t"+min+"\t:\t"+sec);
-                        try
-                        {
-                            Thread.sleep(1000);
-                        }
-                        catch(Exception e)
-                        {
-                            System.out.println(e);
-                        }
-                        if(sec==60)
-                        {
-                            min++;
-                            sec=0;
-                        }
-                        if(min==60)
-                        {
-                            hr++;
-                            min=0;
-                        }
+                        Thread.sleep(10);
                     }
-                
+                catch(Exception e)
+                     {
+                        System.out.println(e);
+                    }
+                    if(centis==60)
+                    {
+                        sec++;
+                        centis=0;
+                    }
+                 if(sec==60)
+                    {
+                        min++;
+                        sec=0;
+                    }
+                 if(min==60)
+                     {
+                        hr++;
+                        min=0;
+                    }
             }
+            System.out.println("Stopwatch has been stopped!!");
         }
     }
 
-class endStopWatch
+class endStopWatch extends Thread
 {
 
-    static void M1()
+    public void run()
     {
-        char es='a';
-        printStopWatch pS = new printStopWatch();
         Scanner sc= new Scanner(System.in);
-        char e = sc.next().charAt(0);
-        if(es=='e')
+        while(true)
         {
-            pS.k=1;
+            System.out.println("\n Input e to stop the stopwatch: ");
+            char e = sc.next().charAt(0);
+            if(e=='e')
+            {
+                printStopWatch.k=1;
+                break;
+            }
+        }
+        
+    }
+}
+class startStopWatch extends Thread
+{
+
+    public void run()
+    {
+        Scanner sc= new Scanner(System.in);
+        while(true)
+        {
+            System.out.print("\n Input s to start the stopwatch: ");
+            char e = sc.next().charAt(0);
+            if(e=='s')
+            {
+                Stopwatch.s=1;
+                break;
+            }
         }
         
     }
 }
 public class Stopwatch extends Thread
 {
+    static int s = 0;
     public static void main(String args[])
     {
         printStopWatch s1 = new printStopWatch();
         endStopWatch eS1 = new endStopWatch();
-        s1.print();
-        eS1.M1();
-
+        startStopWatch s2 = new startStopWatch();
+        s2.start();
+        while (true) {
+            if (Stopwatch.s == 1) {
+                s1.start();
+                eS1.start();
+                break;
+            }
+        
+        }
     }
 }
-//make the print and endStopwatch method run at the same time
